@@ -1,6 +1,5 @@
-import mongoose from "mongoose";
+import mongoose,{model,models} from "mongoose";
 import bcrypt from "bcryptjs";
-
 
 export interface IUser{
     email: string;
@@ -24,4 +23,6 @@ userSchema.pre('save',async function(next) {
     next();
 })
 
-// 31.35
+const User = models?.User || model<IUser>('User',userSchema);
+
+export default User;
