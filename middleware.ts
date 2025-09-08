@@ -31,7 +31,8 @@ export default withAuth(
 )
 
 export const config = {
-    matcher: [
-        "^\/(public/|favicon.ico|_next/static|_next/image)(\/.*)?$"
-    ]
-}
+  matcher: [
+    // Match all public paths like static files, images, etc.
+    "/(public|favicon.ico|_next/static|_next/image)(/.*)?",
+  ],
+};
